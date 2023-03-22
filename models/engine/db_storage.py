@@ -7,6 +7,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import Base
+from models.state import State
+from models.city import City
+from models.user import User
+from models.place import Place
+from models.review import Review
+from models.amenity import Amenity
 
 
 class DBStorage:
@@ -35,7 +41,7 @@ class DBStorage:
                 key = '{}.{}'.format(obj.__class__.__name__, obj.id)
                 obj_dict[key] = obj
         else:
-            obj_list = ['User', 'State', 'City', 'Amenity', 'Place', 'Review']
+            obj_list = [User, State, City, Amenity, Place, Review]
             for obj in obj_list:
                 all_objects = self.__session.query(obj).all()
                 for obj in all_objects:
