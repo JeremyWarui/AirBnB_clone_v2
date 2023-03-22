@@ -74,8 +74,11 @@ class HBNBCommand(cmd.Cmd):
                 pline = pline[2].strip()  # pline is now str
                 if pline:
                     # check for *args or **kwargs
-                    if pline[0] == '{' and pline[-1] == '}' \
-                        and type(eval(pline)) is dict:
+                    if (
+                        pline[0] == '{'
+                        and pline[-1] == '}'
+                        and type(eval(pline)) is dict
+                    ):
                         _args = pline
                     else:
                         _args = pline.replace(',', '')
@@ -128,19 +131,18 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        else:
-            new_instance = HBNBCommand.classes[class_name]()
+        new_instance = HBNBCommand.classes[class_name]()
 
-            for param in list_of_params:
-                key = param.split("=")[0]
-                value = param.split("=")[1]
-                val = value.replace("_", " ")
+        for param in list_of_params:
+            key = param.split("=")[0]
+            value = param.split("=")[1]
+            val = value.replace("_", " ")
 
-                if hasattr(new_instance, key) is True:
-                    setattr(new_instance, key, val)
+            if hasattr(new_instance, key) is True:
+                setattr(new_instance, key, val)
 
-            new_instance.save()
-            print(new_instance.id)
+        new_instance.save()
+        print(new_instance.id)
 
     def help_create(self):
         """ Help information for the create method """
