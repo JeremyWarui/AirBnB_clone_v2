@@ -19,7 +19,7 @@ def do_deploy(archive_path):
     try:
         zip_file = archive_path.split("/")[1]
         unzip_file = zip_file.split(".")[0]
-        unzipfile_path = "/data/web_static/releases/{}".format(unzip_file)
+        unzipfile_path = "/data/web_static/releases/{}/".format(unzip_file)
         sym_link = "/data/web_static/current"
 
         put(archive_path, "/tmp/")
