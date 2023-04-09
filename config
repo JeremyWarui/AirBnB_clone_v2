@@ -1,0 +1,11 @@
+Host *
+	#PasswordAuthentication yes
+Host 54.236.56.164
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
+Host 54.90.17.105
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/server2
+Host 100.25.20.235
+	PasswordAuthentication yes
+	#IdentityFile ~/.ssh/ld_server
