@@ -25,6 +25,7 @@ def do_pack():
     except Exception:
         return None
 
+
 def do_deploy(archive_path):
     """
     function that deploys our archive to webservers
@@ -53,6 +54,7 @@ def do_deploy(archive_path):
         return True
     except Exception:
         return False
+
 
 def deploy():
     """ function that finally deploys """
