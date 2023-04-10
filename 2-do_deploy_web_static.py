@@ -6,7 +6,7 @@ using the function do_deploy
 """
 from fabric.api import *
 from os.path import isfile
-env.hosts = ['54.236.56.164', '54.90.17.105']
+env.hosts = ['54.236.56.164', '52.90.13.117']
 env.user = 'ubuntu'
 
 
