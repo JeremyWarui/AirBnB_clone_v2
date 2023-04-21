@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def display():
+def hello_route():
     """ home route to display hellow HBNB """
     return "Hello HBNB!"
 
