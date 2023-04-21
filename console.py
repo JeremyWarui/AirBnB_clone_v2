@@ -140,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
                 val = value.replace("_", " ")
                 try:
                     val = eval(val)
-                except:
+                except Exception:
                     pass
                 setattr(new_instance, key, val)
 
