@@ -22,7 +22,7 @@ def teardown_session(self):
 def states_list():
     """displays all states"""
     states = models.storage.all(State)
-    list_of_states = {state.id: state.name for state in states.values()}
+    list_of_states = [state for state in states.values()]
     return render_template("7-states_list.html",
                            list_of_states=list_of_states)
 
