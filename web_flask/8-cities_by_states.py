@@ -7,6 +7,7 @@ from flask import Flask, render_template
 from models import storage
 from models.state import State
 from models.city import City
+import models
 
 
 app = Flask(__name__)
@@ -21,7 +22,7 @@ def teardown_session(self):
 @app.route('/cities_by_states', strict_slashes=False)
 def states_list():
     """displays all states"""
-    states = storage.all(State)
+    states = models.storage.all(State)
     list_of_states = [state for state in states.values()]
     return render_template("8-cities_by_states.html",
                            list_of_states=list_of_states)
