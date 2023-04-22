@@ -16,9 +16,9 @@
 
 `2-c_route.py` - Routes:
 
-- /: display “Hello HBNB!”
-- /hbnb: display “HBNB”
-- /c/<text>: display “C ” followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- `/c/<text>`: display “C ” followed by the value of the text variable (replace underscore \_ symbols with a space )
 
 **3. Python is cool!**
 
@@ -26,10 +26,10 @@
 
 Routes:
 
-- /: display “Hello HBNB!”
-- /hbnb: display “HBNB”
-- /c/<text>: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
-- /python/(<text>): display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- `/c/<text>`: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/python/(<text>)`: display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
   - The default value of text is “is cool”
 
 **4. Is it a number?**
@@ -38,12 +38,12 @@ Routes:
 
 Routes:
 
-- /: display “Hello HBNB!”
-- /hbnb: display “HBNB”
-- /c/<text>: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
-- /python/(<text>): display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- `/c/<text>`: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/python/(<text>)`: display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
   - The default value of text is “is cool”
-- /number/<n>: display “n is a number” only if n is an integer
+- `/number/<n>`: display “n is a number” only if n is an integer
 
 **5. Number template**
 
@@ -51,13 +51,13 @@ Routes:
 
 Routes:
 
-- /: display “Hello HBNB!”
-- /hbnb: display “HBNB”
-- /c/<text>: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
-- /python/(<text>): display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- `/c/<text>`: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/python/(<text>)`: display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
   - The default value of text is “is cool”
-- /number/<n>: display “n is a number” only if n is an integer
-- /number_template/<n>: display a HTML page only if n is an integer:
+- `/number/<n>`: display “n is a number” only if n is an integer
+- `/number_template/<n>`: display a HTML page only if n is an integer:
   - H1 tag: “Number: n” inside the tag BODY
 
 **6. Odd or even?**
@@ -66,13 +66,13 @@ Routes:
 
 Routes:
 
-- /: display “Hello HBNB!”
-- /hbnb: display “HBNB”
-- /c/<text>: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
-- /python/(<text>): display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/`: display “Hello HBNB!”
+- `/hbnb`: display “HBNB”
+- `/c/<text>`: display “C ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
+- `/python/(<text>)`: display “Python ”, followed by the value of the text variable (replace underscore \_ symbols with a space )
   - The default value of text is “is cool”
-- /number/<n>: display “n is a number” only if n is an integer
-- /number_template/<n>: display a HTML page only if n is an integer:
+- `/number/<n>`: display “n is a number” only if n is an integer
+- `/number_template/<n>`: display a HTML page only if n is an integer:
   - H1 tag: “Number: n” inside the tag BODY
-- /number_odd_or_even/<n>: display a HTML page only if n is an integer:
+- `/number_odd_or_even/<n>`: display a HTML page only if n is an integer:
   - H1 tag: “Number: n is even|odd” inside the tag BODY
