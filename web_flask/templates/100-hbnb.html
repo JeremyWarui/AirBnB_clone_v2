@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<HEAD>
+		<TITLE>AirBnB clone</TITLE>
+
+		<link rel="shortcut icon" href="../static/images/icon.ico" >
+		<link rel="stylesheet" href="../static/styles/4-common.css"/>
+		<link rel="stylesheet" href="../static/styles/3-header.css"/>
+		<link rel="stylesheet" href="../static/styles/3-footer.css"/>
+		<link rel="stylesheet" href="../static/styles/6-filters.css"/>
+		<link rel="stylesheet" href="../static/styles/8-places.css"/>
+	</HEAD>
+    <BODY>
+		<HEADER>
+			<DIV id="header_logo"></DIV>
+		</HEADER>
+		<DIV class="container">
+			<SECTION class="filters">
+				<BUTTON>Search</BUTTON>
+				<DIV class="locations">
+					<H3>States</H3>
+					<H4>&nbsp;</H4>
+					<UL class="popover">
+						{% for state in states | sort(attribute='name') %}
+						<LI><H2>{{ state.name }}:</H2>
+							<UL>
+                                {% for city in state.cities | sort(attribute='name') %}
+								<LI><H4>{{ city.name }}</H4></LI>
+								{% endfor %}
+							</UL>
+                        </LI>
+                        {% endfor %}
+					</UL>
+				</DIV>
+				<DIV class="filter_amenities">
+					<H3>Amenities</H3>
+					<H4>&nbsp;</H4>
+					<UL class="popover">
+                        {% for amenity in amenities | sort(attribute='name')%}
+						<LI><H4>{{ amenity.name }}</H4></LI>
+                        {% endfor %}
+					</UL>
+				</DIV>
+
+			</SECTION>
+			<SECTION class="places">
+				<h1>Places</h1>
+				{% for place in places %}
+				<ARTICLE>
+					<DIV class="headline">
+						<H2>{{ place.name }}</H2>
+						<DIV class="price_by_night">
+							${{ place.price_by_night }}
+						</DIV>
+					</DIV>
+					<DIV class="information">
+						<DIV class="max_guest">
+							<DIV class="guest_icon"></DIV>
+							<P>{{ place.max_guest }} Guests</P>
+						</DIV>
+						<DIV class="number_rooms">
+							<DIV class="bed_icon"></DIV>
+							<P>{{ place.number_rooms }} Bedroom</P>
+						</DIV>
+						 <DIV class="number_bathrooms">
+							<DIV class="bath_icon"></DIV>
+							<P>{{ place.number_bathrooms}} Bathroom</P>
+						</DIV>
+					</DIV>
+					<DIV class="user"><B>Owner</B>: {{ place.user.first_name }} {{ place.user.last_name }}</DIV>
+					{% autoescape false %}
+					<DIV class="description">{{ place.description }}</DIV>
+					{% endautoescape %}
+				</ARTICLE>
+				{% endfor %}
+			</SECTION>
+		</DIV>
+		<FOOTER>
+			<P>Holberton School</P>
+		</FOOTER>
+	</BODY>
+</html>
